@@ -50,6 +50,14 @@ With these packages taken care of, we install the remainder of our requirements 
 conda install netCDF4 dask jupyterlab
 ```
 
+Optionally, we install `dask-labextension`, which allows for a more intuitive view of our `dask` distributed cluster:
+
+```bash
+conda install -c conda-forge nodejs
+pip install dask_labextension
+jupyter labextension install dask-labextension
+```
+
 Once the packages are installed, we are ready to enter the JupyterLab environment and begin interacting with data:
 
 ```bash
