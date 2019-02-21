@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# output files created by dask
+dask-worker-space/
+
 # C extensions
 *.so
 
