@@ -116,7 +116,7 @@ dependencies:
     - monotonic==1.5
     - msgpack==0.6.1
     - numcodecs==0.6.3
-    - xarray==0.11.1+64.g612d390
-    - zarr==2.2.1.dev140
+    - git+https://github.com/pydata/xarray.git
+    - git+https://github.com/zarr-developers/zarr.git
 prefix: /home/tracmip/miniconda3/envs/tracmip-zarr
 
