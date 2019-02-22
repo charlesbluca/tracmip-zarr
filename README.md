@@ -30,6 +30,12 @@ tar -xvzf google-cloud-sdk-235.0.0-linux-x86_64.tar.gz
 sh google-cloud-sdk/install.sh
 ```
 
+To make sure the `gcloud` command line interface will work in or out of our environement, we append the following to our `.bashrc`:
+
+```bash
+echo "export CLOUDSDK_PYTHON=/home/tracmip/miniconda3/envs/gcloud/bin/python2.7" >> .bashrc
+```
+
 Now that we have installed of Python and Google Cloud SDK, we are ready to set up an environment to access our data:
 
 ```bash
