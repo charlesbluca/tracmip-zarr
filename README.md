@@ -1,5 +1,5 @@
 # tracmip-zarr
-This Github repo serves as documentation for the process of converting the TRACMIP netCDF4 datasets stored on a server at the Karlsruhe Institute of Technology (KIT) to the `zarr` format, and then send these datasets to the cloud bucket made available at Pangeo.
+This Github repo serves as documentation for the process of converting the TRACMIP netCDF4 datasets stored on a server at the Karlsruhe Institute of Technology (KIT) to the `zarr` format, and then sending these datasets to the cloud bucket made available at Pangeo.
 The process of this conversion was done across three different machines - one located at the University of Miami, one located at KIT, and one located at the Lamont-Doherty Earth Observatory.
 Though the individual tasks of each machine were different, the process of initializing an environment on them remained consistent.
 From the ground up, this includes:
