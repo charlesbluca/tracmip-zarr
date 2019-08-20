@@ -1,5 +1,7 @@
 # tracmip-zarr
-This Github repo will serve as documentation for the process of converting the TRACMIP netCDF4 datasets stored on a server at the University of Miami to the `zarr` format, and then send these datasets to the cloud bucket made available at Pangeo.
+This Github repo serves as documentation for the process of converting the TRACMIP netCDF4 datasets stored on a server at the Karlsruhe Institute of Technology (KIT) to the `zarr` format, and then send these datasets to the cloud bucket made available at Pangeo.
+The process of this conversion was done across three different machines - one located at the University of Miami, one located at KIT, and one located at the Lamont-Doherty Earth Observatory.
+Though the individual tasks of each machine were different, the process of initializing an environment on them remained consistent.
 From the ground up, this includes:
 
 * Installing Python via Miniconda
@@ -15,14 +17,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh
 ```
 
-After installing, we immediately want to set up an environment to install and use Google Cloud SDK in; it will only work with Python 2.7.x:
-
-```bash
-conda create -n gcloud python=2.7
-conda activate gcloud
-```
-
-Now in our newly created environment, we want to get the [latest versioned archive](https://cloud.google.com/sdk/docs/downloads-versioned-archives) of Google Cloud SDK:
+Now we want to get the [latest versioned archive](https://cloud.google.com/sdk/docs/downloads-versioned-archives) of Google Cloud SDK:
 
 ```bash
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-235.0.0-linux-x86_64.tar.gz
@@ -33,10 +28,11 @@ sh google-cloud-sdk/install.sh
 To make sure the `gcloud` command line interface will work in or out of our environement, we append the following to our `.bashrc`:
 
 ```bash
-echo "export CLOUDSDK_PYTHON=/home/tracmip/miniconda3/envs/gcloud/bin/python2.7" >> .bashrc
+echo "export CLOUDSDK_PYTHON=/usr/bin/python2.7" >> .bashrc
 ```
 
-Now that we have installed of Python and Google Cloud SDK, we are ready to set up an environment to access our data:
+This tells our version of Google Cloud SDK to work with the system native version of Python 2.7.
+Now that we have installed Python and Google Cloud SDK, we are ready to set up an environment to access our data:
 
 ```bash
 conda create -n tracmip-zarr python
